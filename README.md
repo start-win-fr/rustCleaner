@@ -177,4 +177,4 @@ This is an independent project, not affiliated with any other PC maintenance sof
 
 ## License
 
-No license has been chosen yet, so all rights are reserved for now.
+Released under the [MIT License](LICENSE).
