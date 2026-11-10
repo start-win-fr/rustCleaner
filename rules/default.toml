@@ -1,0 +1,81 @@
+# Built-in cleaning rules. Paths must start with a {VARIABLE}.
+# Available: {TEMP} {LOCALAPPDATA} {APPDATA} {USERPROFILE} {WINDIR} {PROGRAMDATA}
+
+[[rule]]
+id = "system.user-temp"
+name = "Fichiers temporaires de l'utilisateur"
+category = "system"
+
+[[rule.target]]
+path = "{TEMP}"
+recursive = true
+min_age_hours = 24
+
+[[rule]]
+id = "system.windows-temp"
+name = "Fichiers temporaires de Windows"
+category = "system"
+
+[[rule.target]]
+path = "{WINDIR}/Temp"
+recursive = true
+min_age_hours = 24
+
+[[rule]]
+id = "system.crash-dumps"
+name = "Vidages mémoire des applications"
+category = "system"
+
+[[rule.target]]
+path = "{LOCALAPPDATA}/CrashDumps"
+pattern = "*.dmp"
+
+[[rule]]
+id = "system.error-reports"
+name = "Rapports d'erreurs Windows archivés"
+category = "system"
+
+[[rule.target]]
+path = "{LOCALAPPDATA}/Microsoft/Windows/WER/ReportArchive"
+recursive = true
+
+[[rule]]
+id = "browser.chrome.cache"
+name = "Google Chrome : cache"
+category = "browser"
+blocked_by_processes = ["chrome.exe"]
+detect = ["{LOCALAPPDATA}/Google/Chrome/User Data"]
+
+[[rule.target]]
+path = "{LOCALAPPDATA}/Google/Chrome/User Data/*/Cache/Cache_Data"
+recursive = true
+
+[[rule.target]]
+path = "{LOCALAPPDATA}/Google/Chrome/User Data/*/Code Cache"
+recursive = true
+
+[[rule]]
+id = "browser.edge.cache"
+name = "Microsoft Edge : cache"
+category = "browser"
+blocked_by_processes = ["msedge.exe"]
+detect = ["{LOCALAPPDATA}/Microsoft/Edge/User Data"]
+
+[[rule.target]]
+path = "{LOCALAPPDATA}/Microsoft/Edge/User Data/*/Cache/Cache_Data"
+recursive = true
+
+[[rule.target]]
+path = "{LOCALAPPDATA}/Microsoft/Edge/User Data/*/Code Cache"
+recursive = true
+
+[[rule]]
+id = "browser.firefox.cache"
+name = "Mozilla Firefox : cache"
+category = "browser"
+blocked_by_processes = ["firefox.exe"]
+detect = ["{APPDATA}/Mozilla/Firefox/Profiles"]
+
+[[rule.target]]
+path = "{LOCALAPPDATA}/Mozilla/Firefox/Profiles/*/cache2"
+recursive = true

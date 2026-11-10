@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>rustCleaner</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="rail" aria-label="Sections">
+      <div class="brand">rust<span>Cleaner</span></div>
+      <div id="nav"></div>
+    </nav>
+    <main id="page" tabindex="-1"></main>
+    <div id="dock" role="status" aria-live="polite"></div>
+    <dialog id="confirm" aria-labelledby="confirm-title">
+      <h2 id="confirm-title"></h2>
+      <p id="confirm-body"></p>
+      <div class="actions">
+        <button id="confirm-no" type="button" class="quiet">Annuler</button>
+        <button id="confirm-yes" type="button" class="primary"></button>
+      </div>
+    </dialog>
+    <script src="app.js"></script>
+  </body>
+</html>
