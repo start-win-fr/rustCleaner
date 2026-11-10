@@ -48,12 +48,20 @@ rustCleaner is deliberately cautious, because a cleaning tool can do real damage
 - Firmware updates are never preselected.
 - Major version upgrades are excluded from "update all", and need an individual confirmation.
 
+## Download
+
+**[Download the desktop app (`rustcleaner-gui.exe`)](https://github.com/start-win-fr/rustCleaner/releases/latest/download/rustcleaner-gui.exe)**
+
+No installation is needed: download the file and double-click it. The command-line tool, `rustcleaner.exe`, and the SHA-256 checksums are on the [releases page](https://github.com/start-win-fr/rustCleaner/releases/latest).
+
+The executables are not code-signed, so Windows SmartScreen may warn you on first launch. To continue, choose **More info**, then **Run anyway**.
+
 ## Requirements
 
 - Windows 10 or 11, x64
 - [Microsoft WebView2 Runtime](https://developer.microsoft.com/microsoft-edge/webview2/), for the desktop app (included with Windows 11)
 - [winget](https://learn.microsoft.com/windows/package-manager/winget/), for software updates
-- To build: a recent stable [Rust toolchain](https://rustup.rs/) with the MSVC target (the project uses Rust edition 2024)
+- To build from source: a recent stable [Rust toolchain](https://rustup.rs/) with the MSVC target (the project uses Rust edition 2024)
 
 ## Build
 
@@ -68,7 +76,7 @@ This produces two programs:
 - `target\release\rustcleaner-gui.exe`: the desktop app
 - `target\release\rustcleaner.exe`: the command-line tool
 
-The interface is plain HTML, CSS and JavaScript embedded in the executable, so there is no Node.js step. No installer is provided yet, and the executables are not code-signed, so Windows SmartScreen may warn about them.
+The interface is plain HTML, CSS and JavaScript embedded in the executable, so there is no Node.js step.
 
 ## Command-line usage
 
